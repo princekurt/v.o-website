@@ -1,0 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { projects } from "../../content";
+import { SiteHeader } from "@/components/site-header";
+
+export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const p = projects.find(x => x.slug === slug); if (!p) notFound(); return <main className="min-h-screen bg-sky"><SiteHeader /><section className="px-5 pb-16 pt-32"><div className="container"><Link href="/projects" className="text-sm font-bold text-royal">← Back to projects</Link><div className="mt-7 overflow-hidden rounded-[2rem] bg-navy"><div className="relative aspect-[16/8]"><Image src={p.image} alt={p.title} fill priority sizes="100vw" className="object-cover"/><div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"/><div className="absolute inset-x-0 bottom-0 p-7 text-white md:p-12"><p className="text-sm font-bold uppercase tracking-widest text-gold">{p.category}</p><h1 className="display mt-2 text-4xl font-extrabold md:text-6xl">{p.title}</h1></div></div></div><article className="card mx-auto -mt-8 max-w-3xl p-7 md:p-10"><p className="eyebrow">Project update</p><p className="mt-5 text-lg leading-8 text-navy/70">{p.description}</p><p className="mt-6 rounded-xl bg-sky p-4 text-sm font-semibold text-royal">{p.status}</p><Link href="/#contact" className="btn btn-gold mt-8">Ask about a similar project →</Link></article></div></section></main> }

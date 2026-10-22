@@ -1,0 +1,6 @@
+<svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="V.O Electrical Lights Trading">
+  <circle cx="80" cy="80" r="76" fill="#F7B919"/><circle cx="80" cy="80" r="68" fill="#0B4AA8"/><circle cx="80" cy="80" r="62" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1"/>
+  <path d="M35 83 80 48l45 35v29H35z" fill="#fff"/><path d="M30 87 80 47l50 40" fill="none" stroke="#F7B919" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M58 76h47v21H58z" fill="#0B4AA8"/><path d="M73.7 76v21M89.3 76v21M58 86.5h47" stroke="#fff" stroke-width="1.7" opacity=".8"/>
+  <path d="M69 112v-12h22v12" fill="#0B4AA8"/><text x="80" y="135" fill="#fff" font-size="10" font-family="Arial" text-anchor="middle" font-weight="bold">V.O</text>
+</svg>
