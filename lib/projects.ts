@@ -31,6 +31,7 @@ function readImages(slug: string): string[] {
 }
 
 const projectOrder = [
+  "luzon-solar-farm",
   "commercial-rooftop-arrays",
   "solar-powered-irrigation",
   "ground-mounted-solar",
@@ -51,6 +52,7 @@ const projectOrder = [
 ];
 
 const featuredOrder = [
+  "luzon-solar-farm",
   "commercial-rooftop-arrays",
   "solar-powered-irrigation",
   "365kw-rooftop-solar-lgu",

@@ -2,14 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPhotos, getArchiveStats } from "@/lib/projects";
 import { SiteHeader } from "@/components/site-header";
-import { SunRail } from "@/components/sun-rail";
 import { SiteFooter } from "@/components/site-footer";
 import { ArchiveExplorer } from "@/components/archive-explorer";
 
 export const metadata = {
   title: "Field Records | V.O Electrical Lights Trading",
   description:
-    "Seventeen projects and every photograph from the V.O Electrical Lights Trading archive — rooftop and ground-mount solar, solar street lighting, transformers, CCTV, fire alarm work, and equipment supply.",
+    "Eighteen projects and every photograph from the V.O Electrical Lights Trading archive — rooftop and ground-mount solar, the Luzon solar farm, street lighting, transformers, CCTV, fire alarm work, and equipment supply.",
 };
 
 export default function ProjectsPage() {
@@ -19,7 +18,6 @@ export default function ProjectsPage() {
   return (
     <main id="top" className="relative overflow-x-clip bg-ink">
       <SiteHeader />
-      <SunRail />
 
       <section className="relative isolate flex min-h-[86svh] flex-col justify-between overflow-hidden bg-ink pb-10 pt-28 text-bone">
         <Image

@@ -19,6 +19,17 @@ export type ArchiveEntry = {
  */
 export const archive: ArchiveEntry[] = [
   {
+    slug: "luzon-solar-farm",
+    title: "Luzon Solar Farm",
+    category: "Solar farm",
+    tags: ["Solar", "Utility"],
+    year: 2025,
+    summary: "A ground-mounted solar farm in Luzon — long rows of panels across open land, built by our own crew.",
+    description:
+      "One of our largest ground-mounted installations: hundreds of panels on steel racking across open land, delivered, installed, wired, and commissioned on site by the V.O crew.",
+    featured: true,
+  },
+  {
     slug: "365kw-rooftop-solar-lgu",
     title: "365 kW Rooftop Solar",
     category: "Government",

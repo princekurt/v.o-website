@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/projects";
 import { SiteHeader } from "@/components/site-header";
-import { SunRail } from "@/components/sun-rail";
 import { SiteFooter } from "@/components/site-footer";
 import { PhotoGrid } from "@/components/photo-grid";
 
@@ -41,7 +40,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main id="top" className="relative overflow-x-clip bg-ink">
       <SiteHeader />
-      <SunRail />
 
       <section className="relative isolate flex min-h-[88svh] flex-col justify-end overflow-hidden bg-ink pb-10 pt-32 text-bone">
         <Image

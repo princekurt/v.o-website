@@ -5,6 +5,14 @@ import { useEffect, useState } from "react";
 import { site } from "@/app/content";
 import { SunMark } from "./sun-mark";
 
+const links = [
+  { label: "Work", href: "/#work" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Process", href: "/#process" },
+  { label: "Stockroom", href: "/#stockroom" },
+  { label: "About", href: "/#crew" },
+];
+
 const menuItems = [
   { no: "01", label: "The work", href: "/#work" },
   { no: "02", label: "Capabilities", href: "/#capabilities" },
@@ -29,8 +37,8 @@ export function SiteHeader() {
     let last = window.scrollY;
     const onScroll = () => {
       const y = window.scrollY;
-      if (y > 160 && y > last) setHidden(true);
-      else if (y < last - 4) setHidden(false);
+      if (y > 180 && y > last) setHidden(true);
+      else if (y < last - 6) setHidden(false);
       last = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -48,32 +56,51 @@ export function SiteHeader() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 mix-blend-difference text-white transition-transform duration-500 ease-out ${
+        className={`fixed inset-x-0 top-0 z-50 border-b border-bone/10 bg-ink/85 backdrop-blur-xl transition-transform duration-500 ease-out ${
           hidden && !open ? "-translate-y-full" : "translate-y-0"
         }`}
       >
-        <div className="container-x flex h-[76px] items-center justify-between gap-6">
-          <a href="#top" className="flex items-center gap-3" aria-label="V.O Electrical Lights Trading home">
-            <SunMark className="h-7 w-7" />
-            <span className="mono hidden sm:block">V.O Electrical</span>
+        <div className="container-x flex h-[72px] items-center justify-between gap-6">
+          <a href="#top" className="flex shrink-0 items-center gap-3" aria-label="V.O Electrical Lights Trading home">
+            <SunMark className="h-6 w-6 text-amber" />
+            <span className="leading-tight">
+              <span className="block text-[13px] font-semibold tracking-tight text-bone">V.O Electrical</span>
+              <span className="mono block text-[9px] text-bone/40">Lights Trading</span>
+            </span>
           </a>
 
-          <p className="mono hidden text-white/60 lg:block">Solar · Electrical · Lighting — Philippines</p>
+          <nav className="hidden items-center gap-7 lg:flex">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[13px] font-medium text-bone/60 transition-colors hover:text-bone"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-          <div className="flex items-center gap-5">
-            <a href={`tel:${site.phone}`} className="mono hidden md:block">
+          <div className="flex items-center gap-3">
+            <a href={`tel:${site.phone}`} className="mono hidden text-bone/50 transition-colors hover:text-bone xl:block">
               {site.phoneDisplay}
+            </a>
+            <a
+              href="/#contact"
+              className="mono hidden border border-bone/30 px-4 py-2.5 text-bone transition-colors hover:border-amber hover:bg-amber hover:text-ink sm:inline-flex"
+            >
+              Start a project
             </a>
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="mono group flex items-center gap-2.5"
+              className="mono flex items-center gap-2.5 border border-bone/25 px-3.5 py-2.5 text-bone/80 transition-colors hover:border-bone/60 hover:text-bone lg:hidden"
               aria-label="Open menu"
             >
               Menu
-              <span className="flex w-5 flex-col gap-[5px]">
-                <span className="h-px w-full bg-current transition-all group-hover:w-3" />
-                <span className="h-px w-full bg-current transition-all group-hover:w-4" />
+              <span className="flex w-4 flex-col gap-[4px]">
+                <span className="h-px w-full bg-current" />
+                <span className="h-px w-full bg-current" />
               </span>
             </button>
           </div>
@@ -90,7 +117,7 @@ export function SiteHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="container-x flex h-[76px] shrink-0 items-center justify-between border-b border-bone/10">
               <div className="flex items-center gap-3">
@@ -112,45 +139,40 @@ export function SiteHeader() {
               </button>
             </div>
 
-            <nav className="container-x flex flex-1 flex-col justify-center py-10">
+            <nav className="container-x flex flex-1 flex-col justify-center py-8">
               {menuItems.map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  initial={{ opacity: 0, y: 28 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.05 + index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                  className="group flex items-baseline gap-5 border-b border-bone/10 py-4 md:gap-8"
+                  transition={{ duration: 0.4, delay: 0.04 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
+                  className="group flex items-baseline gap-4 border-b border-bone/10 py-4"
                 >
                   <span className="mono text-amber">{item.no}</span>
-                  <span className="poster text-[clamp(2.4rem,7vw,6.5rem)] transition-colors duration-300 group-hover:text-amber">
+                  <span className="poster text-[clamp(2rem,7vw,4.5rem)] transition-colors group-hover:text-amber">
                     {item.label}
                   </span>
-                  <span className="ml-auto hidden text-3xl text-bone/30 transition group-hover:translate-x-2 group-hover:text-amber md:block">
+                  <span className="ml-auto text-2xl text-bone/25 transition group-hover:translate-x-1 group-hover:text-amber">
                     ↗
                   </span>
                 </motion.a>
               ))}
             </nav>
 
-            <motion.div
-              className="container-x grid shrink-0 gap-4 border-t border-bone/10 py-6 sm:grid-cols-2 lg:grid-cols-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.35 }}
-            >
-              <a href={`tel:${site.phone}`} className="mono hover:text-amber">
+            <div className="container-x grid shrink-0 gap-4 border-t border-bone/10 py-6 sm:grid-cols-2 lg:grid-cols-4">
+              <a href={`tel:${site.phone}`} className="mono text-bone/60 hover:text-amber">
                 {site.phoneDisplay}
               </a>
-              <a href={`mailto:${site.email}`} className="mono hover:text-amber">
+              <a href={`mailto:${site.email}`} className="mono text-bone/60 hover:text-amber">
                 {site.email}
               </a>
-              <a href={site.facebook} target="_blank" rel="noreferrer" className="mono hover:text-amber">
+              <a href={site.facebook} target="_blank" rel="noreferrer" className="mono text-bone/60 hover:text-amber">
                 Facebook ↗
               </a>
-              <p className="mono text-bone/40">Philippines · PHT</p>
-            </motion.div>
+              <p className="mono text-bone/30">Philippines · PHT</p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
