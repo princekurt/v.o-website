@@ -1,28 +1,33 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { site } from "@/app/content";
 import { SunMark } from "./sun-mark";
 
 const links = [
-  { label: "Work", href: "/#work" },
-  { label: "Capabilities", href: "/#capabilities" },
-  { label: "Process", href: "/#process" },
-  { label: "Stockroom", href: "/#stockroom" },
-  { label: "About", href: "/#crew" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Government", href: "/government" },
+  { label: "Insights", href: "/insights" },
+  { label: "FAQs", href: "/faq" },
 ];
 
 const menuItems = [
-  { no: "01", label: "The work", href: "/#work" },
-  { no: "02", label: "Capabilities", href: "/#capabilities" },
-  { no: "03", label: "Process", href: "/#process" },
-  { no: "04", label: "Archive", href: "/projects" },
-  { no: "05", label: "Stockroom", href: "/#stockroom" },
-  { no: "06", label: "Contact", href: "/#contact" },
+  { no: "01", label: "Services", href: "/services" },
+  { no: "02", label: "Projects", href: "/projects" },
+  { no: "03", label: "About", href: "/about" },
+  { no: "04", label: "Government", href: "/government" },
+  { no: "05", label: "Insights", href: "/insights" },
+  { no: "06", label: "FAQs", href: "/faq" },
+  { no: "07", label: "Contact", href: "/contact" },
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
 
@@ -61,36 +66,43 @@ export function SiteHeader() {
         }`}
       >
         <div className="container-x flex h-[72px] items-center justify-between gap-6">
-          <a href="#top" className="flex shrink-0 items-center gap-3" aria-label="V.O Electrical Lights Trading home">
+          <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="V.O Electrical Lights Trading home">
             <SunMark className="h-6 w-6 text-amber" />
             <span className="leading-tight">
               <span className="block text-[13px] font-semibold tracking-tight text-bone">V.O Electrical</span>
               <span className="mono block text-[9px] text-bone/40">Lights Trading</span>
             </span>
-          </a>
+          </Link>
 
-          <nav className="hidden items-center gap-7 lg:flex">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[13px] font-medium text-bone/60 transition-colors hover:text-bone"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="hidden items-center gap-6 lg:flex">
+            {links.map((link) => {
+              const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`text-[13px] font-medium transition-colors ${
+                    active ? "text-bone" : "text-bone/60 hover:text-bone"
+                  }`}
+                >
+                  {link.label}
+                  {active && <span className="ml-1.5 inline-block h-1 w-1 rounded-full bg-amber align-middle" />}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
             <a href={`tel:${site.phone}`} className="mono hidden text-bone/50 transition-colors hover:text-bone xl:block">
               {site.phoneDisplay}
             </a>
-            <a
-              href="/#contact"
+            <Link
+              href="/contact"
               className="mono hidden border border-bone/30 px-4 py-2.5 text-bone transition-colors hover:border-amber hover:bg-amber hover:text-ink sm:inline-flex"
             >
               Start a project
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -141,23 +153,26 @@ export function SiteHeader() {
 
             <nav className="container-x flex flex-1 flex-col justify-center py-8">
               {menuItems.map((item, index) => (
-                <motion.a
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.04 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                  className="group flex items-baseline gap-4 border-b border-bone/10 py-4"
                 >
-                  <span className="mono text-amber">{item.no}</span>
-                  <span className="poster text-[clamp(2rem,7vw,4.5rem)] transition-colors group-hover:text-amber">
-                    {item.label}
-                  </span>
-                  <span className="ml-auto text-2xl text-bone/25 transition group-hover:translate-x-1 group-hover:text-amber">
-                    ↗
-                  </span>
-                </motion.a>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="group flex items-baseline gap-4 border-b border-bone/10 py-4"
+                  >
+                    <span className="mono text-amber">{item.no}</span>
+                    <span className="poster text-[clamp(2rem,7vw,4.5rem)] transition-colors group-hover:text-amber">
+                      {item.label}
+                    </span>
+                    <span className="ml-auto text-2xl text-bone/25 transition group-hover:translate-x-1 group-hover:text-amber">
+                      ↗
+                    </span>
+                  </Link>
+                </motion.div>
               ))}
             </nav>
 

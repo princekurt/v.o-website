@@ -20,11 +20,13 @@ export function SiteFooter() {
         <div>
           <p className="mono text-bone/30">Explore</p>
           <div className="mt-4 grid gap-2 text-sm text-bone/70">
-            <Link href="/#work" className="transition hover:text-amber">Selected work</Link>
-            <Link href="/projects" className="transition hover:text-amber">Field records</Link>
-            <Link href="/#capabilities" className="transition hover:text-amber">Capabilities</Link>
-            <Link href="/#stockroom" className="transition hover:text-amber">Stockroom</Link>
-            <Link href="/#contact" className="transition hover:text-amber">Start a project</Link>
+            <Link href="/services" className="transition hover:text-amber">Services</Link>
+            <Link href="/projects" className="transition hover:text-amber">Projects</Link>
+            <Link href="/about" className="transition hover:text-amber">About</Link>
+            <Link href="/government" className="transition hover:text-amber">Government</Link>
+            <Link href="/insights" className="transition hover:text-amber">Insights</Link>
+            <Link href="/faq" className="transition hover:text-amber">FAQs</Link>
+            <Link href="/contact" className="transition hover:text-amber">Contact</Link>
           </div>
         </div>
 

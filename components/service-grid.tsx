@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export type Service = {
   no: string;
@@ -7,14 +8,17 @@ export type Service = {
   copy: string;
   bullets: string[];
   image: string;
+  href: string;
 };
 
 export function ServiceGrid({ services }: { services: Service[] }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {services.map((service) => (
-        <article
+        <Link
           key={service.no}
+          href={service.href}
+          aria-label={`Learn more about ${service.title}`}
           className="group flex flex-col overflow-hidden border border-bone/15 bg-ink-2/60 transition-colors duration-300 hover:border-amber/60"
         >
           <div className="relative aspect-[4/3] overflow-hidden">
@@ -44,8 +48,13 @@ export function ServiceGrid({ services }: { services: Service[] }) {
                 </li>
               ))}
             </ul>
+
+            <span className="mono mt-5 inline-flex items-center gap-2 text-amber">
+              Explore service
+              <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+            </span>
           </div>
-        </article>
+        </Link>
       ))}
     </div>
   );

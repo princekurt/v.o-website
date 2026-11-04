@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllPhotos, getArchiveStats } from "@/lib/projects";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { MobileActionBar } from "@/components/mobile-action-bar";
 import { ArchiveExplorer } from "@/components/archive-explorer";
 
 export const metadata = {
@@ -109,7 +110,7 @@ export default function ProjectsPage() {
               first — we will tell you what a proper installation takes.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/#contact" className="btn-ink">
+              <Link href="/contact" className="btn-ink">
                 Start a project ↗
               </Link>
               <Link href="/#work" className="link-arrow mt-4 text-ink">
@@ -121,6 +122,7 @@ export default function ProjectsPage() {
       </section>
 
       <SiteFooter />
+      <MobileActionBar />
     </main>
   );
 }

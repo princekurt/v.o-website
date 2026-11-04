@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getProject, getProjects } from "@/lib/projects";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { MobileActionBar } from "@/components/mobile-action-bar";
 import { PhotoGrid } from "@/components/photo-grid";
 
 export function generateStaticParams() {
@@ -88,7 +89,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <dd className="text-right text-sm font-semibold md:text-base">{fact.value}</dd>
                 </div>
               ))}
-              <a href="/#contact" className="btn-ink mt-8">
+              <a href="/contact" className="btn-ink mt-8">
                 Ask about a similar build ↗
               </a>
             </dl>
@@ -138,6 +139,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       </section>
 
       <SiteFooter />
+      <MobileActionBar />
     </main>
   );
 }
