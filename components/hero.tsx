@@ -241,9 +241,9 @@ export function Hero() {
       <div className="container-x relative z-10 flex min-h-[100svh] flex-col pb-24 pt-24 md:pb-10 md:pt-28">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           <p className="mono leading-relaxed text-bone/70 [text-shadow:0_1px_10px_rgba(0,0,0,.55)]">
-            V.O Electrical Lights Trading
+            Villanueva Ong Electrical
             <br />
-            Philippines
+            Lights Trading · Philippines
           </p>
           <p className="mono hidden text-center leading-relaxed text-bone/70 [text-shadow:0_1px_10px_rgba(0,0,0,.55)] md:block">
             Field records

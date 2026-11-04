@@ -8,6 +8,7 @@ export type Service = {
   copy: string;
   bullets: string[];
   image: string;
+  imagePosition?: string;
   href: string;
 };
 
@@ -28,6 +29,7 @@ export function ServiceGrid({ services }: { services: Service[] }) {
               fill
               sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
               className="object-cover transition duration-700 ease-out group-hover:scale-105"
+              style={{ objectPosition: service.imagePosition ?? "50% 50%" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
             <span className="mono absolute left-4 top-4 border border-bone/25 bg-ink/40 px-2 py-1 text-bone/80 backdrop-blur">

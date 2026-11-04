@@ -9,8 +9,8 @@ export type ServiceContent = {
   meta: string;
   short: string;
   intro: string;
-  imageProject: string;
-  imageFallback: string;
+  image: string;
+  imagePosition?: string;
   bullets: ServiceBullet[];
   scope: string[];
   scopeNote: string;
@@ -28,8 +28,7 @@ export const servicePages: ServiceContent[] = [
     short: "A rooftop system sized to your household's actual load, installed without disrupting the home.",
     intro:
       "Most homes start with the monthly bill. We look at what you actually use, the roof you have, and how much of it is usable, then design a system around that — not a generic package.",
-    imageProject: "home-solar",
-    imageFallback: "/archive/commercial-rooftop-arrays/01.webp",
+    image: "/services/residential-solar.jpg",
     bullets: [
       {
         title: "Roof and load assessment",
@@ -83,8 +82,7 @@ export const servicePages: ServiceContent[] = [
     short: "Larger arrays for businesses that want predictable energy costs across one roof or a whole site.",
     intro:
       "Commercial solar is a capital project before it is an energy bill. We study the load, roof condition, and operations, then phase the work so the site keeps running while we install.",
-    imageProject: "commercial-rooftop-arrays",
-    imageFallback: "/archive/commercial-rooftop-arrays/01.webp",
+    image: "/services/commercial-industrial.jpg",
     bullets: [
       {
         title: "Load and roof study",
@@ -138,8 +136,7 @@ export const servicePages: ServiceContent[] = [
     short: "Power where the grid is thin — pumps, processing, lighting, and site power built around how the farm runs.",
     intro:
       "Farm power is different: the load is seasonal, the site is remote, and the work cannot wait for the grid. We design around the way the farm actually operates.",
-    imageProject: "ground-mounted-solar",
-    imageFallback: "/archive/ground-mounted-solar/01.webp",
+    image: "/services/farms-agriculture.jpg",
     bullets: [
       {
         title: "Site and load survey",
@@ -193,8 +190,8 @@ export const servicePages: ServiceContent[] = [
     short: "Water, pumped by sunlight. No fuel to haul and no diesel bill — installed and tested in the field.",
     intro:
       "A solar pump is only as good as its sizing. We start with the water source, the head, and the flow you need, then build the array and controls around that.",
-    imageProject: "solar-powered-irrigation",
-    imageFallback: "/archive/solar-powered-irrigation/01.webp",
+    image: "/services/solar-irrigation.jpg",
+    imagePosition: "50% 18%",
     bullets: [
       {
         title: "Water source and head",
@@ -248,8 +245,8 @@ export const servicePages: ServiceContent[] = [
     short: "Solar street lights, poles, and road studs supplied from our own stock and installed on site.",
     intro:
       "Street lighting is a layout problem before it is a product problem. We plan pole spacing, light levels, and autonomy around the road or site, then supply and install.",
-    imageProject: "eco-vo-300w-street-lights",
-    imageFallback: "/archive/eco-vo-300w-street-lights/01.webp",
+    image: "/services/solar-street-lighting.jpg",
+    imagePosition: "50% 22%",
     bullets: [
       {
         title: "Lighting layout",
@@ -303,8 +300,7 @@ export const servicePages: ServiceContent[] = [
     short: "The trading house behind the solar work — transformers, generators, CCTV, FDAS, and bulk materials.",
     intro:
       "V.O is an electrical trading company first. The stock, the warehouse, and the crews behind the solar work are the same ones behind our supply and electrical projects.",
-    imageProject: "75kva-transformer-denr-r12",
-    imageFallback: "/archive/75kva-transformer-denr-r12/01.webp",
+    image: "/services/electrical-supply-works.jpg",
     bullets: [
       {
         title: "Transformers",

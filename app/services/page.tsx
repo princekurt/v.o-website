@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getArchiveStats, getProjects } from "@/lib/projects";
+import { getArchiveStats } from "@/lib/projects";
 import { servicePages } from "@/lib/services";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -11,16 +11,13 @@ import { ProcessSteps } from "@/components/process-steps";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = {
-  title: "Services | V.O Electrical Lights Trading",
+  title: "Services | Villanueva Ong Electrical Lights Trading",
   description:
-    "Residential, commercial, farm, irrigation, street lighting, and electrical supply services from V.O Electrical Lights Trading — survey, design, supply, installation, and handover.",
+    "Residential, commercial, farm, irrigation, street lighting, and electrical supply services from Villanueva Ong Electrical Lights Trading — survey, design, supply, installation, and handover.",
 };
 
 export default function ServicesPage() {
-  const projects = getProjects();
   const stats = getArchiveStats();
-
-  const cover = (slug: string, fallback: string) => projects.find((p) => p.slug === slug)?.image ?? fallback;
 
   const services: Service[] = servicePages.map((service) => ({
     no: service.no,
@@ -28,7 +25,8 @@ export default function ServicesPage() {
     meta: service.meta,
     copy: service.short,
     bullets: service.scope,
-    image: cover(service.imageProject, service.imageFallback),
+    image: service.image,
+    imagePosition: service.imagePosition,
     href: `/services/${service.slug}`,
   }));
 

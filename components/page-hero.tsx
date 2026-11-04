@@ -10,6 +10,7 @@ export function PageHero({
   copy,
   image,
   imageAlt = "",
+  imagePosition,
   breadcrumb,
   stats,
   actions,
@@ -20,6 +21,7 @@ export function PageHero({
   copy?: ReactNode;
   image?: string;
   imageAlt?: string;
+  imagePosition?: string;
   breadcrumb: string;
   stats?: Stat[];
   actions?: ReactNode;
@@ -70,6 +72,7 @@ export function PageHero({
                 priority
                 sizes="(min-width: 1024px) 44vw, 100vw"
                 className="object-cover"
+                style={{ objectPosition: imagePosition ?? "50% 50%" }}
               />
             </div>
           )}

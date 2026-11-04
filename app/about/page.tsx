@@ -12,9 +12,9 @@ import { ProcessSteps } from "@/components/process-steps";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = {
-  title: "About | V.O Electrical Lights Trading",
+  title: "About | Villanueva Ong Electrical Lights Trading",
   description:
-    "V.O Electrical Lights Trading is an electrical trading house and solar installation crew in the Philippines — private and government projects, complete documents, PHILGEPS-ready.",
+    "Villanueva Ong Electrical Lights Trading is an electrical trading house and solar installation crew in the Philippines — private and government projects, complete documents, PHILGEPS-ready.",
 };
 
 const coverage = [

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = getProject(slug);
   if (!project) return { title: "Project not found" };
   return {
-    title: `${project.title} | V.O Electrical Lights Trading`,
+    title: `${project.title} | Villanueva Ong Electrical Lights Trading`,
     description: project.summary,
   };
 }

@@ -4,4 +4,5 @@
 - Expects the site to be fully responsive across desktop and mobile viewports. Confidence: 0.6
 - Rejects generic, "seen-it-everywhere" web layouts (repetitive card/section SaaS patterns) and asks for distinctive, award-winning-caliber design built around a real concept; expects creative ambition rather than a lazy/safe execution. Confidence: 0.65
 - Insists on crisp, high-resolution imagery: flags blurry photos (e.g. low-res exports used as hero backgrounds) and expects them swapped for sharp, appropriate images rather than shipping soft ones. Confidence: 0.6
+- Doesn't want widely-recognizable stock imagery on client sites: photos must not be ones "they will search it in google they can see it immediately", because generic images make the company look not credible — prefers client's own project photos (or paid/commissioned ones) over common free stock. Confidence: 0.6
 - Wants to authorize actions himself: "don't do anything unless I told you" / "don't do anything yet, ask first" — do not make changes, commits, or deployments on your own initiative; confirm the plan before executing. Confidence: 0.7

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = getService(slug);
   if (!service) return { title: "Service not found" };
   return {
-    title: `${service.title} | V.O Electrical Lights Trading`,
+    title: `${service.title} | Villanueva Ong Electrical Lights Trading`,
     description: service.short,
   };
 }
@@ -33,7 +33,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) notFound();
 
   const projects = getProjects();
-  const image = projects.find((p) => p.slug === service.imageProject)?.image ?? service.imageFallback;
+  const image = service.image;
   const related = service.relatedProjects
     .map((projectSlug) => projects.find((project) => project.slug === projectSlug))
     .filter((project): project is NonNullable<typeof project> => Boolean(project))
@@ -49,6 +49,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         copy={service.intro}
         image={image}
         imageAlt={service.title}
+        imagePosition={service.imagePosition}
         breadcrumb="Services"
         actions={
           <>

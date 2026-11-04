@@ -6,9 +6,9 @@ import { PageHero } from "@/components/page-hero";
 import { ContactSection } from "@/components/contact-section";
 
 export const metadata = {
-  title: "Contact | V.O Electrical Lights Trading",
+  title: "Contact | Villanueva Ong Electrical Lights Trading",
   description:
-    "Request a solar quote or site assessment from V.O Electrical Lights Trading. Call, email, message us on Facebook, or send the form.",
+    "Request a solar quote or site assessment from Villanueva Ong Electrical Lights Trading. Call, email, message us on Facebook, or send the form.",
 };
 
 export default function ContactPage() {

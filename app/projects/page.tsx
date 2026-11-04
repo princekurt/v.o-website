@@ -7,9 +7,9 @@ import { MobileActionBar } from "@/components/mobile-action-bar";
 import { ArchiveExplorer } from "@/components/archive-explorer";
 
 export const metadata = {
-  title: "Field Records | V.O Electrical Lights Trading",
+  title: "Field Records | Villanueva Ong Electrical Lights Trading",
   description:
-    "Eighteen projects and every photograph from the V.O Electrical Lights Trading archive — rooftop and ground-mount solar, the Luzon solar farm, street lighting, transformers, CCTV, fire alarm work, and equipment supply.",
+    "Eighteen projects and every photograph from the Villanueva Ong Electrical Lights Trading archive — rooftop and ground-mount solar, the Luzon solar farm, street lighting, transformers, CCTV, fire alarm work, and equipment supply.",
 };
 
 export default function ProjectsPage() {

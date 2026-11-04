@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getProjects } from "@/lib/projects";
 import { insights } from "@/lib/insights";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -10,15 +9,12 @@ import { SectionHeader } from "@/components/section-header";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = {
-  title: "Insights | V.O Electrical Lights Trading",
+  title: "Insights | Villanueva Ong Electrical Lights Trading",
   description:
     "Practical guides on solar costs, net metering, irrigation, street lighting, and choosing an installer in the Philippines.",
 };
 
 export default function InsightsPage() {
-  const projects = getProjects();
-  const cover = (slug: string, fallback: string) => projects.find((p) => p.slug === slug)?.image ?? fallback;
-
   return (
     <main id="top" className="relative overflow-x-clip bg-ink">
       <SiteHeader />
@@ -55,11 +51,12 @@ export default function InsightsPage() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-ink-2">
                   <Image
-                    src={cover(insight.imageProject, insight.imageFallback)}
+                    src={insight.image}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
                     className="object-cover transition duration-700 group-hover:scale-105"
+                    style={{ objectPosition: insight.imagePosition ?? "50% 50%" }}
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">

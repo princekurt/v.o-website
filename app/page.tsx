@@ -31,15 +31,14 @@ export default function Home() {
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
-  const cover = (slug: string, fallback: string) => projects.find((p) => p.slug === slug)?.image ?? fallback;
-
   const services: Service[] = servicePages.map((service) => ({
     no: service.no,
     title: service.title,
     meta: service.meta,
     copy: service.short,
     bullets: service.scope,
-    image: cover(service.imageProject, service.imageFallback),
+    image: service.image,
+    imagePosition: service.imagePosition,
     href: `/services/${service.slug}`,
   }));
 

@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <SunMark className="h-7 w-7 text-amber" />
-            <span className="mono">V.O Electrical Lights Trading</span>
+            <span className="mono">{site.name}</span>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-bone/50">
             Solar installation for homes, farms, and businesses — plus the electrical stockroom and
@@ -46,11 +46,14 @@ export function SiteFooter() {
       <div className="container-x flex flex-wrap items-center justify-between gap-3 border-t border-bone/10 py-5">
         <span className="mono text-bone/30">© {new Date().getFullYear()} {site.legalName}</span>
         <span className="mono text-bone/30">Project photography from our own files</span>
+        <Link href="/credits" className="mono text-bone/50 transition hover:text-amber">
+          Image credits
+        </Link>
         <a href="#top" className="mono text-bone/50 transition hover:text-amber">Back to top ↑</a>
       </div>
 
       <div className="overflow-hidden pb-16 md:pb-0" aria-hidden="true">
-        <p className="poster whitespace-nowrap text-[16.5vw] leading-[0.78] text-bone/90">V.O Electrical</p>
+        <p className="poster whitespace-nowrap text-[15vw] leading-[0.78] text-bone/90">Villanueva Ong</p>
       </div>
     </footer>
   );

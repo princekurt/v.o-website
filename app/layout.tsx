@@ -29,21 +29,22 @@ const mono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "V.O Electrical Lights Trading | Solar Installation",
+  title: "Villanueva Ong Electrical Lights Trading | Solar Installation",
   description:
-    "Solar installation for homes, farms, and businesses by V.O Electrical Lights Trading — plus electrical supplies, street lighting, and electrical works. Private and government projects nationwide.",
+    "Solar installation for homes, farms, and businesses by Villanueva Ong Electrical Lights Trading — plus electrical supplies, street lighting, and electrical works. Private and government projects nationwide.",
   keywords: [
     "solar installation Philippines",
     "solar panel installation",
     "solar street lights",
     "solar powered irrigation",
     "electrical supplies Philippines",
-    "Villanueva-Ong",
+    "Villanueva Ong Electrical Lights Trading",
+    "Villanueva-Ong Electrical Lights Trading",
     "V.O Electrical Lights Trading",
   ],
   authors: [{ name: site.legalName }],
   openGraph: {
-    title: "V.O Electrical Lights Trading | Solar Installation",
+    title: "Villanueva Ong Electrical Lights Trading | Solar Installation",
     description:
       "Solar installation, electrical supplies, and lighting for homes, farms, and businesses — private and government projects.",
     type: "website",
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "V.O Electrical Lights Trading",
+    title: "Villanueva Ong Electrical Lights Trading",
     description: "Solar installation, electrical supplies, and lighting in the Philippines.",
   },
 };
@@ -65,7 +66,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Electrician",
   name: site.legalName,
-  alternateName: site.name,
+  alternateName: ["Villanueva-Ong Electrical Lights Trading", "V.O Electrical Lights Trading"],
   description:
     "Solar installation and electrical supply company in the Philippines. Residential, commercial, farm and ground-mounted solar, solar-powered irrigation, solar street lighting, electrical supplies, and electrical works.",
   telephone: site.phone,

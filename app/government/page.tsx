@@ -9,7 +9,7 @@ import { ProjectGrid } from "@/components/project-grid";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = {
-  title: "Government Projects | V.O Electrical Lights Trading",
+  title: "Government Projects | Villanueva Ong Electrical Lights Trading",
   description:
     "Solar, street lighting, transformers, CCTV, and FDAS for government projects — complete documents, PHILGEPS-ready, private and public sector.",
 };
@@ -90,8 +90,8 @@ export default function GovernmentPage() {
         eyebrow="Government & institutional"
         title="Built for public projects."
         copy="V.O accepts private and government projects with complete documents and PHILGEPS-ready for public bidding. LGU rooftops, transformers, CCTV, fire alarm, and street lighting."
-        image="/archive/365kw-rooftop-solar-lgu/01.webp"
-        imageAlt="365 kW rooftop solar installation for a local government unit"
+        image="/government/hero.jpg"
+        imageAlt="Rooftop solar array on a public school building"
         breadcrumb="Government"
         stats={[
           { value: "PHILGEPS", label: "Ready for bidding" },

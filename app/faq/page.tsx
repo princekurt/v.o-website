@@ -9,9 +9,9 @@ import { FaqList } from "@/components/faq-list";
 import { CtaBand } from "@/components/cta-band";
 
 export const metadata = {
-  title: "FAQs | V.O Electrical Lights Trading",
+  title: "FAQs | Villanueva Ong Electrical Lights Trading",
   description:
-    "Answers about solar costs, site assessments, net metering, batteries, government projects, and coverage from V.O Electrical Lights Trading.",
+    "Answers about solar costs, site assessments, net metering, batteries, government projects, and coverage from Villanueva Ong Electrical Lights Trading.",
 };
 
 const schema = {

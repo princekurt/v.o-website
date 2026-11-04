@@ -1,6 +1,6 @@
 export const site = {
-  name: "V.O Electrical Lights Trading",
-  legalName: "Villanueva-Ong Electrical Lights Trading",
+  name: "Villanueva Ong Electrical Lights Trading",
+  legalName: "Villanueva Ong Electrical Lights Trading",
   phoneDisplay: "0992 659 5090",
   phone: "+639926595090",
   email: "villanuevaongtrading@gmail.com",

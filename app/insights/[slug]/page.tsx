@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjects } from "@/lib/projects";
 import { getInsight, insights } from "@/lib/insights";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -19,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const insight = getInsight(slug);
   if (!insight) return { title: "Insight not found" };
   return {
-    title: `${insight.title} | V.O Electrical Lights Trading`,
+    title: `${insight.title} | Villanueva Ong Electrical Lights Trading`,
     description: insight.excerpt,
   };
 }
@@ -29,8 +28,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
   const insight = getInsight(slug);
   if (!insight) notFound();
 
-  const projects = getProjects();
-  const image = projects.find((p) => p.slug === insight.imageProject)?.image ?? insight.imageFallback;
+  const image = insight.image;
   const related = insights.filter((item) => item.slug !== insight.slug).slice(0, 2);
 
   const schema = {
@@ -39,7 +37,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
     headline: insight.title,
     description: insight.excerpt,
     articleSection: insight.category,
-    author: { "@type": "Organization", name: "V.O Electrical Lights Trading" },
+    author: { "@type": "Organization", name: "Villanueva Ong Electrical Lights Trading" },
   };
 
   return (
@@ -52,6 +50,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
         copy={insight.excerpt}
         image={image}
         imageAlt=""
+        imagePosition={insight.imagePosition}
         breadcrumb="Insights"
         size="md"
         actions={
@@ -91,7 +90,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             ))}
 
             <div className="mt-14 border-t border-ink/15 pt-6">
-              <p className="mono text-ink/40">Published by V.O Electrical Lights Trading</p>
+              <p className="mono text-ink/40">Published by Villanueva Ong Electrical Lights Trading</p>
               <div className="mt-4 flex flex-wrap items-center gap-5">
                 <Link href="/contact" className="btn-ink">
                   Ask about your project ↗
@@ -128,11 +127,12 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-ink-2">
                   <Image
-                    src={projects.find((p) => p.slug === item.imageProject)?.image ?? item.imageFallback}
+                    src={item.image}
                     alt=""
                     fill
                     sizes="180px"
                     className="object-cover transition duration-700 group-hover:scale-105"
+                    style={{ objectPosition: item.imagePosition ?? "50% 50%" }}
                   />
                 </div>
                 <div>

@@ -11,8 +11,8 @@ export type Insight = {
   category: string;
   date: string;
   readTime: string;
-  imageProject: string;
-  imageFallback: string;
+  image: string;
+  imagePosition?: string;
   intro: string;
   sections: InsightSection[];
   relatedProjects: string[];
@@ -27,8 +27,7 @@ export const insights: Insight[] = [
     category: "Cost",
     date: "14 October 2026",
     readTime: "6 min",
-    imageProject: "commercial-rooftop-arrays",
-    imageFallback: "/archive/commercial-rooftop-arrays/01.webp",
+    image: "/insights/solar-cost-philippines.jpg",
     intro:
       "There is no honest single price for solar. Two houses with the same floor area can need very different systems, and two quotes for the same roof can include very different scopes. Here is what actually moves the number.",
     sections: [
@@ -77,8 +76,7 @@ export const insights: Insight[] = [
     category: "Guides",
     date: "2 October 2026",
     readTime: "5 min",
-    imageProject: "365kw-rooftop-solar-lgu",
-    imageFallback: "/archive/365kw-rooftop-solar-lgu/01.webp",
+    image: "/insights/net-metering-philippines.jpg",
     intro:
       "Net metering is the arrangement that lets a grid-tied solar system send excess daytime power to the grid and receive a credit on your bill. The rules and forms vary by distribution utility, but the preparation is similar.",
     sections: [
@@ -128,8 +126,7 @@ export const insights: Insight[] = [
     category: "Agriculture",
     date: "18 September 2026",
     readTime: "5 min",
-    imageProject: "solar-powered-irrigation",
-    imageFallback: "/archive/solar-powered-irrigation/01.webp",
+    image: "/insights/solar-irrigation-farm-checklist.jpg",
     intro:
       "A solar pump is not a plug-and-play replacement for a diesel pump. The system has to match the water source and the field. These are the things to measure before anyone quotes you.",
     sections: [
@@ -185,8 +182,8 @@ export const insights: Insight[] = [
     category: "Government",
     date: "5 September 2026",
     readTime: "5 min",
-    imageProject: "eco-vo-300w-street-lights",
-    imageFallback: "/archive/eco-vo-300w-street-lights/01.webp",
+    image: "/insights/solar-street-lights-lgu.jpg",
+    imagePosition: "50% 22%",
     intro:
       "Solar street lighting is one of the easiest government projects to get wrong, because the purchase is visible but the layout and battery autonomy are not. Here is what to settle before procurement.",
     sections: [
@@ -235,8 +232,7 @@ export const insights: Insight[] = [
     category: "Guides",
     date: "21 August 2026",
     readTime: "6 min",
-    imageProject: "luzon-solar-farm",
-    imageFallback: "/archive/luzon-solar-farm/01.jpg",
+    image: "/insights/choosing-a-solar-installer.jpg",
     intro:
       "Solar is a construction project with a 20-year tail. The installer matters as much as the panels. These are the checks we would want if we were buying.",
     sections: [

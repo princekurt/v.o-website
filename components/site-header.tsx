@@ -66,11 +66,17 @@ export function SiteHeader() {
         }`}
       >
         <div className="container-x flex h-[72px] items-center justify-between gap-6">
-          <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="V.O Electrical Lights Trading home">
+          <Link
+            href="/"
+            className="flex shrink-0 items-center gap-3"
+            aria-label="Villanueva Ong Electrical Lights Trading home"
+          >
             <SunMark className="h-6 w-6 text-amber" />
             <span className="leading-tight">
-              <span className="block text-[13px] font-semibold tracking-tight text-bone">V.O Electrical</span>
-              <span className="mono block text-[9px] text-bone/40">Lights Trading</span>
+              <span className="block text-[12px] font-semibold tracking-tight text-bone sm:text-[13px]">
+                Villanueva Ong
+              </span>
+              <span className="mono block text-[8px] text-bone/40 sm:text-[9px]">Electrical Lights Trading</span>
             </span>
           </Link>
 
@@ -134,7 +140,7 @@ export function SiteHeader() {
             <div className="container-x flex h-[76px] shrink-0 items-center justify-between border-b border-bone/10">
               <div className="flex items-center gap-3">
                 <SunMark className="h-7 w-7 text-amber" />
-                <span className="mono">V.O Electrical</span>
+                <span className="mono">Villanueva Ong</span>
               </div>
               <button
                 type="button"
