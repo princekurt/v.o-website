@@ -4,12 +4,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import { PageHero } from "@/components/page-hero";
 import { ContactSection } from "@/components/contact-section";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Contact | Villanueva Ong Electrical Lights Trading",
   description:
     "Request a solar quote or site assessment from Villanueva Ong Electrical Lights Trading. Call, email, message us on Facebook, or send the form.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

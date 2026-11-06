@@ -10,12 +10,14 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
 import { ProcessSteps } from "@/components/process-steps";
 import { CtaBand } from "@/components/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About | Villanueva Ong Electrical Lights Trading",
   description:
     "Villanueva Ong Electrical Lights Trading is an electrical trading house and solar installation crew in the Philippines — private and government projects, complete documents, PHILGEPS-ready.",
-};
+  path: "/about",
+});
 
 const coverage = [
   {

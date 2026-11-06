@@ -12,6 +12,7 @@ import { ProjectGrid } from "@/components/project-grid";
 import { ProcessSteps } from "@/components/process-steps";
 import { FaqList } from "@/components/faq-list";
 import { CtaBand } from "@/components/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return servicePages.map((service) => ({ slug: service.slug }));
@@ -21,10 +22,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return { title: "Service not found" };
-  return {
+  return pageMetadata({
     title: `${service.title} | Villanueva Ong Electrical Lights Trading`,
     description: service.short,
-  };
+    path: `/services/${service.slug}`,
+    image: service.image,
+  });
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {

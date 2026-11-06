@@ -5,12 +5,14 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import { ArchiveExplorer } from "@/components/archive-explorer";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Field Records | Villanueva Ong Electrical Lights Trading",
   description:
     "Eighteen projects and every photograph from the Villanueva Ong Electrical Lights Trading archive — rooftop and ground-mount solar, the Luzon solar farm, street lighting, transformers, CCTV, fire alarm work, and equipment supply.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   const photos = getAllPhotos();

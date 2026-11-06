@@ -46,6 +46,9 @@ export function SiteFooter() {
       <div className="container-x flex flex-wrap items-center justify-between gap-3 border-t border-bone/10 py-5">
         <span className="mono text-bone/30">© {new Date().getFullYear()} {site.legalName}</span>
         <span className="mono text-bone/30">Project photography from our own files</span>
+        <Link href="/privacy" className="mono text-bone/50 transition hover:text-amber">
+          Privacy
+        </Link>
         <Link href="/credits" className="mono text-bone/50 transition hover:text-amber">
           Image credits
         </Link>

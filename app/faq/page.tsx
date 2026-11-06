@@ -7,12 +7,14 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
 import { FaqList } from "@/components/faq-list";
 import { CtaBand } from "@/components/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "FAQs | Villanueva Ong Electrical Lights Trading",
   description:
     "Answers about solar costs, site assessments, net metering, batteries, government projects, and coverage from Villanueva Ong Electrical Lights Trading.",
-};
+  path: "/faq",
+});
 
 const schema = {
   "@context": "https://schema.org",

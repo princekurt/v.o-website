@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import { PhotoGrid } from "@/components/photo-grid";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getProjects().map(({ slug }) => ({ slug }));
@@ -15,10 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return { title: "Project not found" };
-  return {
+  return pageMetadata({
     title: `${project.title} | Villanueva Ong Electrical Lights Trading`,
     description: project.summary,
-  };
+    path: `/projects/${project.slug}`,
+    image: project.image,
+  });
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -94,6 +97,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </a>
             </dl>
           </div>
+
+          {project.caseStudy && (
+            <div className="mt-16 border-t border-ink/20 pt-10">
+              <div className="flex flex-wrap items-end justify-between gap-3 border-b border-ink/20 pb-3">
+                <p className="mono text-ink/40">Project notes</p>
+                <p className="mono text-ink/40">Challenge · Approach · Outcome</p>
+              </div>
+              <div className="mt-6 grid gap-px border border-ink/15 bg-ink/15 md:grid-cols-3">
+                {[
+                  ["Challenge", project.caseStudy.challenge],
+                  ["Approach", project.caseStudy.approach],
+                  ["Outcome", project.caseStudy.outcome],
+                ].map(([label, copy]) => (
+                  <div key={label} className="bg-bone p-6">
+                    <p className="mono text-amber-deep">{label}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-ink/65">{copy}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-16">
             <div className="mb-6 flex items-end justify-between border-b border-ink/20 pb-3">

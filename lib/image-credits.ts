@@ -8,8 +8,8 @@ export type ImageCredit = {
 };
 
 /**
- * Licensed stock used for service thumbnails, article covers, and the
- * government hero. Project gallery photographs come from V.O's own files.
+ * Licensed stock used for the home hero, service thumbnails, and article covers.
+ * Project gallery photographs come from V.O's own files.
  */
 export const imageCredits: ImageCredit[] = [
   {
@@ -107,14 +107,5 @@ export const imageCredits: ImageCredit[] = [
     license: "CC BY-SA 2.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
     source: "https://commons.wikimedia.org/wiki/File:Solar_installation_technician_on_rooftop_(5392894792).jpg",
-  },
-  {
-    file: "/government/hero.jpg",
-    title: "Solar panels on the roof of Acland Burghley School",
-    creator: "Robert Lamb",
-    license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
-    source:
-      "https://commons.wikimedia.org/wiki/File:View_of_solar_panels_on_the_roof_of_Acland_Burghley_School_-_geograph.org.uk_-_6272735.jpg",
   },
 ];

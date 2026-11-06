@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { site } from "./content";
+import { pageMetadata } from "@/lib/seo";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const body = localFont({ src: "./fonts/SFNS.ttf", variable: "--font-body", display: "swap" });
@@ -28,10 +32,16 @@ const mono = localFont({
   display: "swap",
 });
 
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
-  title: "Villanueva Ong Electrical Lights Trading | Solar Installation",
-  description:
-    "Solar installation for homes, farms, and businesses by Villanueva Ong Electrical Lights Trading — plus electrical supplies, street lighting, and electrical works. Private and government projects nationwide.",
+  metadataBase: new URL(siteUrl),
+  ...pageMetadata({
+    title: "Villanueva Ong Electrical Lights Trading | Solar Installation",
+    description:
+      "Solar installation for homes, farms, and businesses by Villanueva Ong Electrical Lights Trading — plus electrical supplies, street lighting, and electrical works. Private and government projects nationwide.",
+    path: "/",
+  }),
   keywords: [
     "solar installation Philippines",
     "solar panel installation",
@@ -43,19 +53,8 @@ export const metadata: Metadata = {
     "V.O Electrical Lights Trading",
   ],
   authors: [{ name: site.legalName }],
-  openGraph: {
-    title: "Villanueva Ong Electrical Lights Trading | Solar Installation",
-    description:
-      "Solar installation, electrical supplies, and lighting for homes, farms, and businesses — private and government projects.",
-    type: "website",
-    locale: "en_PH",
-    siteName: site.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Villanueva Ong Electrical Lights Trading",
-    description: "Solar installation, electrical supplies, and lighting in the Philippines.",
-  },
+  robots: { index: true, follow: true },
+  ...(googleVerification ? { verification: { google: googleVerification } } : {}),
 };
 
 export const viewport: Viewport = {
@@ -98,6 +97,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${body.variable} ${poster.variable} ${editorial.variable} ${mono.variable}`}>
         {children}
+        <Analytics />
+        <SpeedInsights />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

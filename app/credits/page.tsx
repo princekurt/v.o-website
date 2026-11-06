@@ -3,11 +3,13 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileActionBar } from "@/components/mobile-action-bar";
 import { PageHero } from "@/components/page-hero";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Image Credits | Villanueva Ong Electrical Lights Trading",
   description: "Licensed stock image credits for Villanueva Ong Electrical Lights Trading.",
-};
+  path: "/credits",
+});
 
 export default function CreditsPage() {
   return (
@@ -17,7 +19,7 @@ export default function CreditsPage() {
       <PageHero
         eyebrow="Credits"
         title="Image credits."
-        copy="Project gallery photographs come from V.O's own project files. The images below are licensed stock used for service thumbnails, article covers, and the government page."
+        copy="Project gallery photographs come from V.O's own project files. The images below are licensed stock used for the home hero, service thumbnails, and article covers."
         breadcrumb="Credits"
         size="md"
       />

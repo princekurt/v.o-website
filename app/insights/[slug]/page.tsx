@@ -8,6 +8,7 @@ import { MobileActionBar } from "@/components/mobile-action-bar";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBand } from "@/components/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return insights.map((insight) => ({ slug: insight.slug }));
@@ -17,10 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const insight = getInsight(slug);
   if (!insight) return { title: "Insight not found" };
-  return {
+  return pageMetadata({
     title: `${insight.title} | Villanueva Ong Electrical Lights Trading`,
     description: insight.excerpt,
-  };
+    path: `/insights/${insight.slug}`,
+    image: insight.image,
+    type: "article",
+  });
 }
 
 export default async function InsightPage({ params }: { params: Promise<{ slug: string }> }) {

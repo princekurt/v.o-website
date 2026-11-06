@@ -7,12 +7,14 @@ import { MobileActionBar } from "@/components/mobile-action-bar";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBand } from "@/components/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Insights | Villanueva Ong Electrical Lights Trading",
   description:
     "Practical guides on solar costs, net metering, irrigation, street lighting, and choosing an installer in the Philippines.",
-};
+  path: "/insights",
+});
 
 export default function InsightsPage() {
   return (

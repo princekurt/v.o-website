@@ -9,12 +9,14 @@ import { SectionHeader } from "@/components/section-header";
 import { ServiceGrid, type Service } from "@/components/service-grid";
 import { ProcessSteps } from "@/components/process-steps";
 import { CtaBand } from "@/components/cta-band";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Services | Villanueva Ong Electrical Lights Trading",
   description:
     "Residential, commercial, farm, irrigation, street lighting, and electrical supply services from Villanueva Ong Electrical Lights Trading — survey, design, supply, installation, and handover.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   const stats = getArchiveStats();

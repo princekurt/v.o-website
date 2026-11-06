@@ -9,6 +9,11 @@ export type ArchiveEntry = {
   location?: string;
   summary: string;
   description: string;
+  caseStudy?: {
+    challenge: string;
+    approach: string;
+    outcome: string;
+  };
   featured?: boolean;
 };
 
@@ -27,6 +32,14 @@ export const archive: ArchiveEntry[] = [
     summary: "A ground-mounted solar farm in Luzon — long rows of panels across open land, built by our own crew.",
     description:
       "One of our largest ground-mounted installations: hundreds of panels on steel racking across open land, delivered, installed, wired, and commissioned on site by the V.O crew.",
+    caseStudy: {
+      challenge:
+        "Open land with no usable roof, and a site that needed a full ground-mounted array rather than a building-mounted system.",
+      approach:
+        "Our crew set the steel racking across the field, installed the panel rows, ran the wiring, and commissioned the array on site.",
+      outcome:
+        "A working ground-mounted solar farm, documented from the first row of racking through to commissioning.",
+    },
     featured: true,
   },
   {
@@ -40,6 +53,14 @@ export const archive: ArchiveEntry[] = [
     summary: "A 365 kW rooftop system for a local government unit, handed over with training for the staff who maintain it.",
     description:
       "Design, supply, and installation of a 365 kW rooftop solar system for a local government unit. The project closed with a handover session so the LGU's own people could look after the system day to day.",
+    caseStudy: {
+      challenge:
+        "A local government unit needed a 365 kW rooftop system and a team that could keep it running after turnover.",
+      approach:
+        "We designed, supplied, and installed the rooftop array, then walked the LGU staff through the system and its day-to-day checks.",
+      outcome:
+        "A 365 kW installation handed over with training for the people responsible for operating and maintaining it.",
+    },
     featured: true,
   },
   {
@@ -51,6 +72,14 @@ export const archive: ArchiveEntry[] = [
     summary: "Row after row of panels across factory and warehouse roofs, photographed from above during installation.",
     description:
       "A large commercial rollout seen from above: panels laid across multiple factory and warehouse roofs, with crews working building to building.",
+    caseStudy: {
+      challenge:
+        "Multiple factory and warehouse roofs needed solar without stopping the businesses operating underneath.",
+      approach:
+        "Crews worked building to building, laying panels across the available roof areas and coordinating around each site's operations.",
+      outcome:
+        "A large commercial rollout delivered across several roofs as one coordinated programme.",
+    },
     featured: true,
   },
   {
